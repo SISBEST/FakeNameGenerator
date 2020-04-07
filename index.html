@@ -9,15 +9,25 @@
   </head>
   <body>
     <h1>Fake Name Generator</h1>
+    <h2>
+      First, select a region:
+    </h2>
+    <label for="regions">Tutorials: </label>
+    <select id="regions"> </select>
     <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
     <script src="https://button.glitch.me/button.js"></script>
     <script>
+      var names;
       var request = new XMLHttpRequest();
       request.open("GET", "names.json", true);
       request.onload = function() {
-        var names = JSON.parse(this.response);
+        names = JSON.parse(this.response);
         for (var i = 0; i < names.length; i++) {
           console.log(names[i].region);
+          var option = document.createElement("option");
+          option.name = names[i].region;
+          option.value = i;
+          document.getElementById("regions").add(option);
         }
       };
       request.send();
