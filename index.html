@@ -81,7 +81,7 @@
       Go!
     </button>
     <div id="results" style="border:3px dotted #00a1de">
-      <a id="imglink"><img id="img" src="#" height="100px"/></a>
+      <a id="imglink"><img id="img" src="#" height="300px"/></a>
       <h1><span id="fname"></span> <span id="lname"></span></h1>
       <h2 id="genderres"></h2>
       <hr />
@@ -117,147 +117,149 @@
       };
       request.send();
       function getnames() {
-        document.getElementById("img").height = 100;
-        var localnames = names[document.getElementById("regions").value];
-        if (document.getElementById("gender").value == "m") {
-          var namelength = Math.floor(
-            Math.random() *
-              names[document.getElementById("regions").value].male.length
-          );
-          var fname =
-            names[document.getElementById("regions").value].male[namelength];
-          document.getElementById("fname").innerHTML = fname;
-          var surnamelength = Math.floor(
-            Math.random() *
-              names[document.getElementById("regions").value].surnames.length
-          );
-          var lname =
-            names[document.getElementById("regions").value].surnames[
-              surnamelength
-            ];
-          document.getElementById("lname").innerHTML = lname;
-          document.getElementById("genderres").innerHTML = "Male";
-          if (document.getElementById("age").value == "k") {
-            var imgoptions = [
-              "https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2FAnthony%20Meyer.jpg?v=1586309248279",
-              "https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2FAustin%20Meyer.jpg?v=1586309252274",
-              "https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2FCraig%20Meyer.jpg?v=1586309257198",
-              "https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2FBob%20Meyer.jpg?v=1586309268975",
-              "https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2FGabriel%20Meyer.jpg?v=1586309333027",
-              "https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2FThomas%20Meyer.jpg?v=1586358917832",
-              "https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2FJohn%20Meyer.jpg?v=1586358918468",
-              "https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2FKeith%20Meyer.jpg?v=1586358918663",
-              "https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2FNoah%20Meyer.jpg?v=1586358919551",
-              "https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2FLouis%20Meyer.jpg?v=1586358922073",
-              "https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2FRyan%20Meyer.jpg?v=1586358927978",
-              "https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2FRobert%20Meyer.jpg?v=1586358925058",
-              "https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2FSean%20Meyer.jpg?v=1586359245033"
-            ];
-            var imgrand = Math.floor(Math.random() * 13);
-            document.getElementById("img").src = imgoptions[imgrand];
-            document.getElementById("imglink").href = imgoptions[imgrand];
+        $("#results").slideUp(50, function() {
+          var localnames = names[document.getElementById("regions").value];
+          if (document.getElementById("gender").value == "m") {
+            var namelength = Math.floor(
+              Math.random() *
+                names[document.getElementById("regions").value].male.length
+            );
+            var fname =
+              names[document.getElementById("regions").value].male[namelength];
+            document.getElementById("fname").innerHTML = fname;
+            var surnamelength = Math.floor(
+              Math.random() *
+                names[document.getElementById("regions").value].surnames.length
+            );
+            var lname =
+              names[document.getElementById("regions").value].surnames[
+                surnamelength
+              ];
+            document.getElementById("lname").innerHTML = lname;
+            document.getElementById("genderres").innerHTML = "Male";
+            if (document.getElementById("age").value == "k") {
+              var imgoptions = [
+                "https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2FAnthony%20Meyer.jpg?v=1586309248279",
+                "https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2FAustin%20Meyer.jpg?v=1586309252274",
+                "https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2FCraig%20Meyer.jpg?v=1586309257198",
+                "https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2FBob%20Meyer.jpg?v=1586309268975",
+                "https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2FGabriel%20Meyer.jpg?v=1586309333027",
+                "https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2FThomas%20Meyer.jpg?v=1586358917832",
+                "https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2FJohn%20Meyer.jpg?v=1586358918468",
+                "https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2FKeith%20Meyer.jpg?v=1586358918663",
+                "https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2FNoah%20Meyer.jpg?v=1586358919551",
+                "https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2FLouis%20Meyer.jpg?v=1586358922073",
+                "https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2FRyan%20Meyer.jpg?v=1586358927978",
+                "https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2FRobert%20Meyer.jpg?v=1586358925058",
+                "https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2FSean%20Meyer.jpg?v=1586359245033"
+              ];
+              var imgrand = Math.floor(Math.random() * 13);
+              document.getElementById("img").src = imgoptions[imgrand];
+              document.getElementById("imglink").href = imgoptions[imgrand];
+            }
+            if (document.getElementById("age").value == "a") {
+              var imgoptions = [
+                "https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2FAaron%20Meyer.jpg?v=1586309241775",
+                "https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2FAlex%20Meyer.jpg?v=1586309246172",
+                "https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2FDean%20Meyer.jpg?v=1586309258106",
+                "https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2FBannon%20Meyer.jpg?v=1586309259492",
+                "https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2FBilly%20Meyer.jpg?v=1586309264224",
+                "https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2FCarl%20Meyer.jpg?v=1586309281118",
+                "https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2FEd%20Meyer.jpg?v=1586309319585",
+                "https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2FEric%20Meyer.jpg?v=1586309331657",
+                "https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2FElijah%20Meyer.jpg?v=1586309321287",
+                "https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2FIrene%20Meyer.jpg?v=1586358905792",
+                "https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2FNicholas%20Meyer.jpg?v=1586358906222",
+                "https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2FJames%20Meyer.jpg?v=1586358909701",
+                "https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2FRob%20Meyer.jpg?v=1586358911166",
+                "https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2FGregory%20Meyer.jpg?v=1586358918620",
+                "https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2FMarcus%20Meyer.jpg?v=1586358929827"
+              ];
+              var imgrand = Math.floor(Math.random() * 15);
+              document.getElementById("img").src = imgoptions[imgrand];
+              document.getElementById("imglink").href = imgoptions[imgrand];
+            }
           }
-          if (document.getElementById("age").value == "a") {
-            var imgoptions = [
-              "https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2FAaron%20Meyer.jpg?v=1586309241775",
-              "https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2FAlex%20Meyer.jpg?v=1586309246172",
-              "https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2FDean%20Meyer.jpg?v=1586309258106",
-              "https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2FBannon%20Meyer.jpg?v=1586309259492",
-              "https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2FBilly%20Meyer.jpg?v=1586309264224",
-              "https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2FCarl%20Meyer.jpg?v=1586309281118",
-              "https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2FEd%20Meyer.jpg?v=1586309319585",
-              "https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2FEric%20Meyer.jpg?v=1586309331657",
-              "https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2FElijah%20Meyer.jpg?v=1586309321287",
-              "https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2FIrene%20Meyer.jpg?v=1586358905792",
-              "https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2FNicholas%20Meyer.jpg?v=1586358906222",
-              "https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2FJames%20Meyer.jpg?v=1586358909701",
-              "https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2FRob%20Meyer.jpg?v=1586358911166",
-              "https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2FGregory%20Meyer.jpg?v=1586358918620",
-              "https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2FMarcus%20Meyer.jpg?v=1586358929827"
-            ];
-            var imgrand = Math.floor(Math.random() * 15);
-            document.getElementById("img").src = imgoptions[imgrand];
-            document.getElementById("imglink").href = imgoptions[imgrand];
-          }
-        }
-        if (document.getElementById("gender").value == "f") {
-          document.getElementById("img").src =
-            "https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2Fnamegen_noimgs.png?v=1586355237586";
-          document.getElementById("imglink").href = "#";
-          document.getElementById("img").height = 300;
-          var namelength = Math.floor(
-            Math.random() *
-              names[document.getElementById("regions").value].female.length
-          );
-          var fname =
-            names[document.getElementById("regions").value].female[namelength];
-          document.getElementById("fname").innerHTML = fname;
+          if (document.getElementById("gender").value == "f") {
+            document.getElementById("img").src =
+              "https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2Fnamegen_noimgs.png?v=1586355237586";
+            document.getElementById("imglink").href = "#";
+            var namelength = Math.floor(
+              Math.random() *
+                names[document.getElementById("regions").value].female.length
+            );
+            var fname =
+              names[document.getElementById("regions").value].female[
+                namelength
+              ];
+            document.getElementById("fname").innerHTML = fname;
 
-          var surnamelength = Math.floor(
-            Math.random() *
-              names[document.getElementById("regions").value].surnames.length
-          );
-          var lname =
-            names[document.getElementById("regions").value].surnames[
-              surnamelength
-            ];
-          document.getElementById("lname").innerHTML = lname;
-          document.getElementById("genderres").innerHTML = "Female";
-        }
-        console.log(fname + " " + lname);
-        var ffnuma = Math.floor(Math.random() * 9);
-        var ffnumb = Math.floor(Math.random() * 9);
-        document.getElementById("phone").innerHTML =
-          "Phone Number: 555-01" + ffnuma + ffnumb;
-        var passcombs = [
-          "12#$",
-          "123!",
-          "432@",
-          "67(*",
-          "45&^",
-          "*&",
-          "!#@",
-          "12#$#$",
-          "*555*",
-          "Ss@3gYvA3",
-          "$&&",
-          "&&&!",
-          "67&^",
-          "89))"
-        ];
-        var passnum = Math.floor(Math.random() * 14);
-        var forl = Math.floor(Math.random() * 2);
-        if (forl == 0) {
-          document.getElementById("password").innerHTML =
-            "Password: " + fname + passcombs[passnum];
-        } else {
-          document.getElementById("password").innerHTML =
-            "Password: " + lname + passcombs[passnum];
-        }
-        var cardnums = [
-          "4242424242424242",
-          "4000056655665556",
-          "5555555555554444",
-          "2223003122003222",
-          "2223003122003222",
-          "378282246310005",
-          "371449635398431",
-          "6011111111111117",
-          "6011000990139424",
-          "3056930009020004",
-          "36227206271667",
-          "3566002020360505",
-          "6200000000000005"
-        ];
-        var cardnum = Math.floor(Math.random() * 13);
-        document.getElementById("ccard").innerHTML =
-          "Credit/Debit Card #: " + cardnums[cardnum];
-        var cvva = Math.floor(Math.random() * 9);
-        var cvvb = Math.floor(Math.random() * 9);
-        var cvvc = Math.floor(Math.random() * 9);
-        document.getElementById("cvv").innerHTML =
-          "CVC/CVV: " + cvva + cvvb + cvvc;
-        $("#results").slideDown(2000);
+            var surnamelength = Math.floor(
+              Math.random() *
+                names[document.getElementById("regions").value].surnames.length
+            );
+            var lname =
+              names[document.getElementById("regions").value].surnames[
+                surnamelength
+              ];
+            document.getElementById("lname").innerHTML = lname;
+            document.getElementById("genderres").innerHTML = "Female";
+          }
+          console.log(fname + " " + lname);
+          var ffnuma = Math.floor(Math.random() * 9);
+          var ffnumb = Math.floor(Math.random() * 9);
+          document.getElementById("phone").innerHTML =
+            "Phone Number: 555-01" + ffnuma + ffnumb;
+          var passcombs = [
+            "12#$",
+            "123!",
+            "432@",
+            "67(*",
+            "45&^",
+            "*&",
+            "!#@",
+            "12#$#$",
+            "*555*",
+            "Ss@3gYvA3",
+            "$&&",
+            "&&&!",
+            "67&^",
+            "89))"
+          ];
+          var passnum = Math.floor(Math.random() * 14);
+          var forl = Math.floor(Math.random() * 2);
+          if (forl == 0) {
+            document.getElementById("password").innerHTML =
+              "Password: " + fname + passcombs[passnum];
+          } else {
+            document.getElementById("password").innerHTML =
+              "Password: " + lname + passcombs[passnum];
+          }
+          var cardnums = [
+            "4242424242424242",
+            "4000056655665556",
+            "5555555555554444",
+            "2223003122003222",
+            "2223003122003222",
+            "378282246310005",
+            "371449635398431",
+            "6011111111111117",
+            "6011000990139424",
+            "3056930009020004",
+            "36227206271667",
+            "3566002020360505",
+            "6200000000000005"
+          ];
+          var cardnum = Math.floor(Math.random() * 13);
+          document.getElementById("ccard").innerHTML =
+            "Credit/Debit Card #: " + cardnums[cardnum];
+          var cvva = Math.floor(Math.random() * 9);
+          var cvvb = Math.floor(Math.random() * 9);
+          var cvvc = Math.floor(Math.random() * 9);
+          document.getElementById("cvv").innerHTML =
+            "CVC/CVV: " + cvva + cvvb + cvvc;
+          $("#results").slideDown(2000);
+        });
       }
     </script>
   </body>
