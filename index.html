@@ -12,25 +12,35 @@
         $("#regions").hide();
         $("#gender").hide();
         $("#age").hide();
-        $("#navbar").slideDown(2000);
+        $("#title").hide();
+        $("#attribution").hide();
+        $("#gen").hide();
+        $("#title").slideDown(2000);
+        $("#attribution").slideDown(2000);
       });
     </script>
   </head>
   <body>
-    <h1>Fake Name Generator</h1>
-    <h2>Names by <a href="https://github.com/thm/uinames">UINames</a>!</h2>
+    <h1 id="title">Fake Name Generator</h1>
+    <h2 id="attribution">
+      Names by <a href="https://github.com/thm/uinames">UINames</a>!
+    </h2>
     <label for="regions">First, select a region: </label>
-    <select id="regions"> </select>
+    <select id="regions"> </select
+    ><br />
     <label for="gender">Then, a gender: </label>
     <select id="gender">
       <option value="m">Male</option>
-      <option value="f">Female</option>
-    </select>
-    <label for="age">Then, a gender: </label>
+      <option value="f">Female</option> </select
+    ><br />
+    <label for="age">Then, an age (just for a picture): </label>
     <select id="age">
       <option value="a">Adult</option>
-      <option value="k">Kid</option>
-    </select>
+      <option value="k">Kid</option> </select
+    ><br />
+    <button id="gen" onclick="getname()">
+      Go!
+    </button>
     <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
     <script src="https://button.glitch.me/button.js"></script>
     <script>
@@ -49,6 +59,10 @@
           option.value = i;
           document.getElementById("regions").add(option);
         }
+        $("#gender").fadeIn();
+        $("#regions").fadeIn();
+        $("#age").fadeIn();
+        $("#gen").slideDown(2000);
       };
       request.send();
       function getnames() {}
