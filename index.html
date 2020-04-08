@@ -84,8 +84,11 @@
       <a id="imglink"><img id="img" src="#" height="100px"/></a>
       <h1><span id="fname"></span> <span id="lname"></span></h1>
       <h2 id="genderres"></h2>
+      <hr />
       <h2 id="phone"></h2>
       <h2 id="password"></h2>
+      <h2 id="ccard"></h2>
+      <h2 id="cvv"></h2>
     </div>
     <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
     <script src="https://button.glitch.me/button.js"></script>
@@ -190,7 +193,8 @@
         console.log(fname + " " + lname);
         var ffnuma = Math.floor(Math.random() * 9);
         var ffnumb = Math.floor(Math.random() * 9);
-        document.getElementById("phone").innerHTML = "555-01" + ffnuma + ffnumb;
+        document.getElementById("phone").innerHTML =
+          "Phone Number: 555-01" + ffnuma + ffnumb;
         var passcombs = [
           "12#$",
           "123!",
@@ -211,12 +215,34 @@
         var forl = Math.floor(Math.random() * 2);
         if (forl == 0) {
           document.getElementById("password").innerHTML =
-            fname + passcombs[passnum];
+            "Password: " + fname + passcombs[passnum];
         } else {
           document.getElementById("password").innerHTML =
-            lname + passcombs[passnum];
+            "Password: " + lname + passcombs[passnum];
         }
-        var cardnums = ["4242424242424242","4000056655665556","5555555555554444","2223003122003222","2223003122003222","378282246310005","371449635398431","","","","","",""];
+        var cardnums = [
+          "4242424242424242",
+          "4000056655665556",
+          "5555555555554444",
+          "2223003122003222",
+          "2223003122003222",
+          "378282246310005",
+          "371449635398431",
+          "6011111111111117",
+          "6011000990139424",
+          "3056930009020004",
+          "36227206271667",
+          "3566002020360505",
+          "6200000000000005"
+        ];
+        var cardnum = Math.floor(Math.random() * 13);
+        document.getElementById("ccard").innerHTML =
+          "Credit/Debit Card #: " + cardnums[cardnum];
+        var cvva = Math.floor(Math.random() * 9);
+        var cvvb = Math.floor(Math.random() * 9);
+        var cvvc = Math.floor(Math.random() * 9);
+        document.getElementById("cvv").innerHTML =
+          "CVC/CVV: " + cvva + cvvb + cvvc;
         $("#results").slideDown(2000);
       }
     </script>
