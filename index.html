@@ -15,7 +15,10 @@
         $("#title").hide();
         $("#attribution").hide();
         $("#gen").hide();
-        $("#title").slideDown(2000);
+        $("#l1").hide();
+        $("#l2").hide();
+        $("#l3").hide();
+        $("#title").slideDown(1000);
         $("#attribution").slideDown(2000);
       });
     </script>
@@ -25,20 +28,20 @@
     <h2 id="attribution">
       Names by <a href="https://github.com/thm/uinames">UINames</a>!
     </h2>
-    <label for="regions">First, select a region: </label>
+    <label id="l1" for="regions">First, select a region: </label>
     <select id="regions"> </select
     ><br />
-    <label for="gender">Then, a gender: </label>
+    <label id="l2" for="gender">Then, a gender: </label>
     <select id="gender">
       <option value="m">Male</option>
       <option value="f">Female</option> </select
     ><br />
-    <label for="age">Then, an age (just for a picture): </label>
+    <label id="l3" for="age">Then, an age (just for a picture): </label>
     <select id="age">
       <option value="a">Adult</option>
       <option value="k">Kid</option> </select
     ><br />
-    <button id="gen" onclick="getname()">
+    <button id="gen" onclick="getnames()">
       Go!
     </button>
     <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
@@ -59,13 +62,18 @@
           option.value = i;
           document.getElementById("regions").add(option);
         }
-        $("#gender").fadeIn();
-        $("#regions").fadeIn();
-        $("#age").fadeIn();
+        $("#gender").slideDown(3000);
+        $("#regions").slideDown(3000);
+        $("#age").slideDown(3000);
+        $("#l1").slideDown(4000);
+        $("#l2").slideDown(4000);
+        $("#l3").slideDown(4000);
         $("#gen").slideDown(2000);
       };
       request.send();
-      function getnames() {}
+      function getnames() {
+        
+      }
     </script>
   </body>
 </html>
