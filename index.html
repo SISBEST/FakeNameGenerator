@@ -117,7 +117,7 @@
       };
       request.send();
       function getnames() {
-        $("#results").slideUp(50, function() {
+        $("#results").slideUp(1000, function() {
           var localnames = names[document.getElementById("regions").value];
           if (document.getElementById("gender").value == "m") {
             var namelength = Math.floor(
