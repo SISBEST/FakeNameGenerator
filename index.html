@@ -73,8 +73,34 @@
       request.send();
       function getnames() {
         var localnames = names[document.getElementById("regions").value];
-        console.log();
+        if (document.getElementById("gender").value == "m") {
+          var namelength = Math.floor(
+            Math.random() *
+              names[document.getElementById("regions").value].male.length
+          );
+          document.getElementById("fname") = names[document.getElementById("regions").value].male[namelength];
+          var surnamelength = Math.floor(
+        Math.random() *
+          names[document.getElementById("regions").value].surnames.length
+      );
+          var lname = names[document.getElementById("regions").value].male[namelength];
+          document.getElementById("lname").innerHTML = 
+          if (document.getElementById("age").value == "k") {
+          }
+          if (document.getElementById("age").value == "a") {
+          }
+        }
+        if (document.getElementById("gender").value == "f") {
+          var namelength = Math.floor(
+            Math.random() *
+              names[document.getElementById("regions").value].female.length
+          );
+        }
       }
+      var surnamelength = Math.floor(
+        Math.random() *
+          names[document.getElementById("regions").value].surnames.length
+      );
     </script>
   </body>
 </html>
