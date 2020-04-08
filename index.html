@@ -61,7 +61,6 @@
       request.onload = function() {
         names = JSON.parse(this.response);
         for (var i = 0; i < names.length; i++) {
-          console.log(names[i].region);
           var option = document.createElement("option");
           option.innerHTML = names[i].region;
           if (names[i].region == "United States") {
