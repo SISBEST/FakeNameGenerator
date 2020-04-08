@@ -6,12 +6,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="/style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $("#regions").hide();
+        $("#gender").hide();
+        $("#age").hide();
+        $("#navbar").slideDown(2000);
+      });
+    </script>
   </head>
   <body>
     <h1>Fake Name Generator</h1>
     <h2>Names by <a href="https://github.com/thm/uinames">UINames</a>!</h2>
     <label for="regions">First, select a region: </label>
-    <select id="regions" onchange="getnames();"> </select>
+    <select id="regions"> </select>
+    <label for="gender">Then, a gender: </label>
+    <select id="gender">
+      <option value="m">Male</option>
+      <option value="f">Female</option>
+    </select>
+    <label for="age">Then, a gender: </label>
+    <select id="age">
+      <option value="a">Adult</option>
+      <option value="k">Kid</option>
+    </select>
     <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
     <script src="https://button.glitch.me/button.js"></script>
     <script>
