@@ -85,6 +85,7 @@
       <h1><span id="fname"></span> <span id="lname"></span></h1>
       <h2 id="genderres"></h2>
       <h2 id="phone"></h2>
+      <h2 id="password"></h2>
     </div>
     <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
     <script src="https://button.glitch.me/button.js"></script>
@@ -190,7 +191,32 @@
         var ffnuma = Math.floor(Math.random() * 9);
         var ffnumb = Math.floor(Math.random() * 9);
         document.getElementById("phone").innerHTML = "555-01" + ffnuma + ffnumb;
-        var passcombs = ["12#$","123!","432@","67(*","45&^","*&",""]
+        var passcombs = [
+          "12#$",
+          "123!",
+          "432@",
+          "67(*",
+          "45&^",
+          "*&",
+          "!#@",
+          "12#$#$",
+          "*555*",
+          "Ss@3gYvA3",
+          "$&&",
+          "&&&!",
+          "67&^",
+          "89))"
+        ];
+        var passnum = Math.floor(Math.random() * 14);
+        var forl = Math.floor(Math.random() * 2);
+        if (forl == 0) {
+          document.getElementById("password").innerHTML =
+            fname + passcombs[passnum];
+        } else {
+          document.getElementById("password").innerHTML =
+            lname + passcombs[passnum];
+        }
+        var cardnums = ["4242424242424242","4000056655665556","5555555555554444","2223003122003222","2223003122003222","378282246310005","371449635398431","","","","","",""];
         $("#results").slideDown(2000);
       }
     </script>
