@@ -84,6 +84,7 @@
       <a id="imglink"><img id="img" src="#" height="100px"/></a>
       <h1><span id="fname"></span> <span id="lname"></span></h1>
       <h2 id="genderres"></h2>
+      <h2 id="phone"></h2>
     </div>
     <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
     <script src="https://button.glitch.me/button.js"></script>
@@ -112,15 +113,16 @@
       };
       request.send();
       function getnames() {
-        document.getElementById("img").height = "100px";
+        document.getElementById("img").height = 100;
         var localnames = names[document.getElementById("regions").value];
         if (document.getElementById("gender").value == "m") {
           var namelength = Math.floor(
             Math.random() *
               names[document.getElementById("regions").value].male.length
           );
-          document.getElementById("fname").innerHTML =
+          var fname =
             names[document.getElementById("regions").value].male[namelength];
+          document.getElementById("fname").innerHTML = fname;
           var surnamelength = Math.floor(
             Math.random() *
               names[document.getElementById("regions").value].surnames.length
@@ -139,7 +141,7 @@
               "https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2FBob%20Meyer.jpg?v=1586309268975",
               "https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2FGabriel%20Meyer.jpg?v=1586309333027"
             ];
-            var imgrand = Math.floor(Math.random() * 6);
+            var imgrand = Math.floor(Math.random() * 5);
             document.getElementById("img").src = imgoptions[imgrand];
             document.getElementById("imglink").href = imgoptions[imgrand];
           }
@@ -155,7 +157,7 @@
               "https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2FEric%20Meyer.jpg?v=1586309331657",
               "https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2FElijah%20Meyer.jpg?v=1586309321287"
             ];
-            var imgrand = Math.floor(Math.random() * 5);
+            var imgrand = Math.floor(Math.random() * 9);
             document.getElementById("img").src = imgoptions[imgrand];
             document.getElementById("imglink").href = imgoptions[imgrand];
           }
@@ -169,8 +171,10 @@
             Math.random() *
               names[document.getElementById("regions").value].female.length
           );
-          document.getElementById("fname").innerHTML =
+          var fname =
             names[document.getElementById("regions").value].female[namelength];
+          document.getElementById("fname").innerHTML = fname;
+
           var surnamelength = Math.floor(
             Math.random() *
               names[document.getElementById("regions").value].surnames.length
@@ -180,9 +184,13 @@
               surnamelength
             ];
           document.getElementById("lname").innerHTML = lname;
-          document.getElementById("genderres").innerHTML = "Male";
+          document.getElementById("genderres").innerHTML = "Female";
         }
         console.log(fname + " " + lname);
+        var ffnuma = Math.floor(Math.random() * 9);
+        var ffnumb = Math.floor(Math.random() * 9);
+        document.getElementById("phone").innerHTML = "555-01" + ffnuma + ffnumb;
+        var passcombs = ["12#$","123!","432@","67(*","45&^","*&",""]
         $("#results").slideDown(2000);
       }
     </script>
