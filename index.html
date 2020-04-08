@@ -5,7 +5,42 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="/style.css" />
+    <style>
+      body {
+        background-color: #f9461c;
+        font-family: sans-serif;
+        text-align: center;
+      }
+      h1 {
+        color: #00a1de;
+      }
+      h2 {
+        color: #009b3a;
+      }
+      h3 {
+        color: #f9e300;
+      }
+      h4 {
+        color: #565a5c;
+      }
+      input {
+        background-color: #565a5c;
+        color: #e27ea6;
+        height: 50px;
+        width: 150px;
+        font-size: 50px;
+        font-weight: bold;
+        border: none;
+        text-align: center;
+      }
+      button {
+        background-color: #522398;
+        color: white;
+        border: none;
+        width: 150px;
+        height: 50px;
+      }
+    </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>
       $(document).ready(function() {
@@ -46,10 +81,8 @@
       Go!
     </button>
     <div id="results" style="border:3px dotted #00a1de">
-      <h1>
-        <img id="img" src="#" height="500px" />
-        <span id="fname"></span> <span id="lname"></span>
-      </h1>
+      <a id="imglink"><img id="img" src="#" height="100px"/></a>
+      <h1><span id="fname"></span> <span id="lname"></span></h1>
       <h2 id="genderres"></h2>
     </div>
     <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
@@ -96,9 +129,24 @@
               surnamelength
             ];
           document.getElementById("lname").innerHTML = lname;
+          document.getElementById("genderres").innerHTML = "Male";
           if (document.getElementById("age").value == "k") {
+            var imgoptions = [
+              "https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2FAnthony%20Meyer.jpg?v=1586309248279",
+              "https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2FAustin%20Meyer.jpg?v=1586309252274",
+              "https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2FCraig%20Meyer.jpg?v=1586309257198",
+              "https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2FBob%20Meyer.jpg?v=1586309268975",
+              "https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2FGabriel%20Meyer.jpg?v=1586309333027"
+            ];
+            var imgrand = Math.floor(Math.random() * 5);
+            document.getElementById("img").src = imgoptions[imgrand];
+            document.getElementById("imglink").href = imgoptions[imgrand];
           }
           if (document.getElementById("age").value == "a") {
+            var imgoptions = ["https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2FAaron%20Meyer.jpg?v=1586309241775","https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2FAlex%20Meyer.jpg?v=1586309246172","https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2FDean%20Meyer.jpg?v=1586309258106","",""];
+            var imgrand = Math.floor(Math.random() * 5);
+            document.getElementById("img").src = imgoptions[imgrand];
+            document.getElementById("imglink").href = imgoptions[imgrand];
           }
         }
         if (document.getElementById("gender").value == "f") {
