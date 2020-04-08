@@ -18,6 +18,7 @@
         $("#l1").hide();
         $("#l2").hide();
         $("#l3").hide();
+        $("#results").hide();
         $("#title").slideDown(1000);
         $("#attribution").slideDown(2000);
       });
@@ -44,6 +45,13 @@
     <button id="gen" onclick="getnames()">
       Go!
     </button>
+    <div id="results" style="border:3px dotted #00a1de">
+      <h1>
+        <img id="img" src="#" height="500px" />
+        <span id="fname"></span> <span id="lname"></span>
+      </h1>
+      <h2 id="genderres"></h2>
+    </div>
     <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
     <script src="https://button.glitch.me/button.js"></script>
     <script>
@@ -78,13 +86,17 @@
             Math.random() *
               names[document.getElementById("regions").value].male.length
           );
-          document.getElementById("fname") = names[document.getElementById("regions").value].male[namelength];
+          document.getElementById("fname").innerHTML =
+            names[document.getElementById("regions").value].male[namelength];
           var surnamelength = Math.floor(
-        Math.random() *
-          names[document.getElementById("regions").value].surnames.length
-      );
-          var lname = names[document.getElementById("regions").value].male[namelength];
-          document.getElementById("lname").innerHTML = 
+            Math.random() *
+              names[document.getElementById("regions").value].surnames.length
+          );
+          var lname =
+            names[document.getElementById("regions").value].surnames[
+              surnamelength
+            ];
+          document.getElementById("lname").innerHTML = lname;
           if (document.getElementById("age").value == "k") {
           }
           if (document.getElementById("age").value == "a") {
@@ -95,12 +107,20 @@
             Math.random() *
               names[document.getElementById("regions").value].female.length
           );
+          document.getElementById("fname").innerHTML =
+            names[document.getElementById("regions").value].female[namelength];
+          var surnamelength = Math.floor(
+            Math.random() *
+              names[document.getElementById("regions").value].surnames.length
+          );
+          var lname =
+            names[document.getElementById("regions").value].surnames[
+              surnamelength
+            ];
+          document.getElementById("lname").innerHTML = lname;
         }
+        $("#results").slideDown(2000);
       }
-      var surnamelength = Math.floor(
-        Math.random() *
-          names[document.getElementById("regions").value].surnames.length
-      );
     </script>
   </body>
 </html>
