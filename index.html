@@ -112,6 +112,7 @@
       };
       request.send();
       function getnames() {
+        document.getElementById("img").height = "100px";
         var localnames = names[document.getElementById("regions").value];
         if (document.getElementById("gender").value == "m") {
           var namelength = Math.floor(
@@ -138,18 +139,32 @@
               "https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2FBob%20Meyer.jpg?v=1586309268975",
               "https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2FGabriel%20Meyer.jpg?v=1586309333027"
             ];
-            var imgrand = Math.floor(Math.random() * 5);
+            var imgrand = Math.floor(Math.random() * 6);
             document.getElementById("img").src = imgoptions[imgrand];
             document.getElementById("imglink").href = imgoptions[imgrand];
           }
           if (document.getElementById("age").value == "a") {
-            var imgoptions = ["https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2FAaron%20Meyer.jpg?v=1586309241775","https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2FAlex%20Meyer.jpg?v=1586309246172","https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2FDean%20Meyer.jpg?v=1586309258106","",""];
+            var imgoptions = [
+              "https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2FAaron%20Meyer.jpg?v=1586309241775",
+              "https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2FAlex%20Meyer.jpg?v=1586309246172",
+              "https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2FDean%20Meyer.jpg?v=1586309258106",
+              "https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2FBannon%20Meyer.jpg?v=1586309259492",
+              "https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2FBilly%20Meyer.jpg?v=1586309264224",
+              "https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2FCarl%20Meyer.jpg?v=1586309281118",
+              "https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2FEd%20Meyer.jpg?v=1586309319585",
+              "https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2FEric%20Meyer.jpg?v=1586309331657",
+              "https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2FElijah%20Meyer.jpg?v=1586309321287"
+            ];
             var imgrand = Math.floor(Math.random() * 5);
             document.getElementById("img").src = imgoptions[imgrand];
             document.getElementById("imglink").href = imgoptions[imgrand];
           }
         }
         if (document.getElementById("gender").value == "f") {
+          document.getElementById("img").src =
+            "https://cdn.glitch.com/f2d41aa7-bec0-4978-9049-cc1c2753a91c%2Fnamegen_noimgs.png?v=1586355237586";
+          document.getElementById("imglink").href = "#";
+          document.getElementById("img").height = 300;
           var namelength = Math.floor(
             Math.random() *
               names[document.getElementById("regions").value].female.length
@@ -165,7 +180,9 @@
               surnamelength
             ];
           document.getElementById("lname").innerHTML = lname;
+          document.getElementById("genderres").innerHTML = "Male";
         }
+        console.log(fname + " " + lname);
         $("#results").slideDown(2000);
       }
     </script>
